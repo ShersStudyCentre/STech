@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S Tech | Professional Web Design & Hosting Agency</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-effect {
+            box-shadow: 0 0 50px -10px rgba(99, 102, 241, 0.3);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white min-h-screen flex flex-col">
+
+    <header class="sticky top-0 z-50 glass-panel border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="router.navigate('home')">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+                    <i class="fa-solid fa-code text-white text-lg"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-indigo-300 bg-clip-text text-transparent">S TECH</span>
+                    <span class="block text-[10px] uppercase tracking-widest text-indigo-400 font-semibold">Web Agency</span>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <button onclick="router.navigate('home')" class="hover:text-indigo-400 transition">Home</button>
+                <button onclick="router.navigate('home', 'pricing')" class="hover:text-indigo-400 transition">Pricing</button>
+                <button onclick="router.navigate('home', 'templates')" class="hover:text-indigo-400 transition">Templates</button>
+                <button onclick="router.navigate('home', 'contact')" class="hover:text-indigo-400 transition">Contact</button>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="https://wa.me/27683901896?text=Hi%20S%20Tech,%20I'm%20interested%20in%20getting%20a%20website%20built!" target="_blank" class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-500 shadow-lg shadow-emerald-600/20 transition transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp mr-2 text-lg"></i> WhatsApp Me
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="app" class="flex-grow">
+        <!-- Dynamic Views Injected Here -->
+    </main>
+
+    <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 py-12 px-4 sm:px-6 lg:px-8 mt-auto">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div class="space-y-4 md:col-span-2">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white">
+                        <i class="fa-solid fa-code text-sm"></i>
+                    </div>
+                    <span class="text-lg font-bold text-white">S TECH WEB DESIGN & HOSTING</span>
+                </div>
+                <p class="text-sm text-slate-400 max-w-sm">
+                    Professional, high-converting websites for South African businesses. R3,000 once-off package with zero monthly retainers and free SSL security.
+                </p>
+                <div class="text-xs text-indigo-400 font-mono">
+                    Direct Contact: 068 390 1896 | shersstudycentre@gmail.com
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3 text-sm">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><button onclick="router.navigate('home')" class="hover:text-white transition">Home Page</button></li>
+                    <li><button onclick="router.navigate('home', 'pricing')" class="hover:text-white transition">R3,000 Package</button></li>
+                    <li><button onclick="router.navigate('home', 'templates')" class="hover:text-white transition">Explore Templates</button></li>
+                    <li><button onclick="router.navigate('home', 'contact')" class="hover:text-white transition">Get in Touch</button></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3 text-sm">Live Template Demos</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><button onclick="router.navigate('template-study')" class="hover:text-white transition">1. Sher's Study Centre</button></li>
+                    <li><button onclick="router.navigate('template-contractor')" class="hover:text-white transition">2. Legacy Contractor</button></li>
+                    <li><button onclick="router.navigate('template-tech')" class="hover:text-white transition">3. Apex Tech Catalogue</button></li>
+                    <li><button onclick="router.navigate('template-creative')" class="hover:text-white transition">4. Vibrant Creative Studio</button></li>
+                    <li><button onclick="router.navigate('template-consulting')" class="hover:text-white transition">5. Aura Consulting</button></li>
+                    <li><button onclick="router.navigate('template-cafe')" class="hover:text-white transition">6. The Daily Crust Café</button></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+            &copy; 2026 S Tech Web Design & Hosting. All rights reserved. Powered with GitHub Pages & SSL Security.
+        </div>
+    </footer>
+
+    <script>
+        function showNotification(message) {
+            const existing = document.getElementById('toast-notification');
+            if (existing) existing.remove();
+
+            const toast = document.createElement('div');
+            toast.id = 'toast-notification';
+            toast.className = 'fixed bottom-5 right-5 z-50 bg-indigo-600 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center space-x-3 transition transform duration-300 translate-y-2 opacity-0';
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-lg"></i><span class="text-sm font-semibold">${message}</span>`;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            }, 50);
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-2', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3500);
+        }
+
+        function handleWhatsAppSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('client-name').value.trim();
+            const phone = document.getElementById('client-phone').value.trim();
+            const business = document.getElementById('client-business').value.trim();
+            const details = document.getElementById('client-details').value.trim();
+
+            if (!name || !phone || !business) {
+                showNotification('Please fill in your name, phone number, and business name.');
+                return;
+            }
+
+            const message = `*New Website Inquiry (R3,000 Package)*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone / WhatsApp:* ${encodeURIComponent(phone)}%0A*Business Name & Type:* ${encodeURIComponent(business)}%0A*Project Details:* ${encodeURIComponent(details || 'None provided')}`;
+            
+            const whatsappUrl = `https://wa.me/27683901896?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+            showNotification('Opening WhatsApp with your ready-made inquiry!');
+        }
+
+        function handleCafeOrder(itemName, price) {
+            showNotification(`Added "${itemName}" (R${price}) to your order basket!`);
+        }
+
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+            showNotification('Consultation booking request received! We will confirm via WhatsApp.');
+        }
+
+        function calculateCreativeQuote() {
+            const pages = parseInt(document.getElementById('calc-pages').value);
+            const seo = document.getElementById('calc-seo').checked ? 1000 : 0;
+            const logo = document.getElementById('calc-logo').checked ? 800 : 0;
+            const total = 3000 + ((pages - 5) * 400) + seo + logo;
+            document.getElementById('calc-total').innerText = `R${total.toLocaleString()}`;
+        }
+
+        const router = {
+            routes: {
+                'home': renderHomePage,
+                'template-study': renderTemplateStudy,
+                'template-contractor': renderTemplateContractor,
+                'template-tech': renderTemplateTech,
+                'template-creative': renderTemplateCreative,
+                'template-consulting': renderTemplateConsulting,
+                'template-cafe': renderTemplateCafe
+            },
+            navigate: function(route, targetHash = '') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                const renderFn = this.routes[route] || this.routes['home'];
+                renderFn();
+                if (targetHash) {
+                    setTimeout(() => {
+                        const el = document.getElementById(targetHash);
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            }
+        };
+
+        function renderHomePage() {
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                <!-- Hero Section -->
+                <section class="relative overflow-hidden pt-16 pb-24 lg:pt-24 lg:pb-32">
+                    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/30 via-slate-950 to-slate-950 pointer-events-none"></div>
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                        <div class="text-center max-w-3xl mx-auto space-y-6">
+                            <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold tracking-wide uppercase">
+                                <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
+                                <span>R3,000 Once-Off • Zero Monthly Retainers</span>
+                            </div>
+                            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                                High-Performance Websites for <span class="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">South African Businesses</span>
+                            </h1>
+                            <p class="text-lg text-slate-300 leading-relaxed">
+                                Get a custom, lightning-fast website complete with free SSL security, mobile optimization, and instant WhatsApp integration. No hidden fees.
+                            </p>
+                            <div class="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
+                                <button onclick="router.navigate('home', 'pricing')" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold text-white bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 shadow-xl shadow-indigo-600/30 transition transform hover:-translate-y-0.5">
+                                    View R3,000 Package <i class="fa-solid fa-arrow-right ml-2"></i>
+                                </button>
+                                <a href="https://wa.me/27683901896?text=Hi%20S%20Tech,%20I'm%20ready%20to%20get%20my%20website%20started!" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-white bg-slate-900 hover:bg-slate-800 border border-slate-800 transition flex items-center justify-center">
+                                    <i class="fa-brands fa-whatsapp text-emerald-500 mr-2 text-xl"></i> WhatsApp Me
+                                </a>
+                            </div>
+                            <div class="pt-6 flex flex-wrap justify-center items-center gap-6 text-xs text-slate-400 font-medium">
+                                <span class="flex items-center"><i class="fa-solid fa-shield-halved text-indigo-400 mr-2"></i> Free SSL Certificate Included</span>
+                                <span class="flex items-center"><i class="fa-solid fa-bolt text-indigo-400 mr-2"></i> Hosted on GitHub Pages</span>
+                                <span class="flex items-center"><i class="fa-solid fa-phone text-indigo-400 mr-2"></i> Direct Line: 068 390 1896</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Pricing & Package Section (Requested Exact Layout) -->
+                <section id="pricing" class="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="bg-slate-900/80 border border-indigo-500/40 rounded-3xl p-8 sm:p-12 relative overflow-hidden glow-effect shadow-2xl">
+                        <!-- Top Badge -->
+                        <div class="flex justify-center mb-6">
+                            <span class="px-5 py-1.5 rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-extrabold text-xs tracking-wider uppercase shadow-lg shadow-indigo-600/30">
+                                MOST POPULAR CHOICE
+                            </span>
+                        </div>
+
+                        <div class="text-center space-y-3 mb-8">
+                            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Complete Business Website</h2>
+                            <p class="text-slate-400 text-sm">Everything you need to establish a powerful digital footprint.</p>
+                            
+                            <div class="pt-4 flex flex-col items-center justify-center">
+                                <div class="flex items-baseline space-x-2">
+                                    <span class="text-5xl sm:text-6xl font-black text-white">R3,000</span>
+                                    <span class="text-slate-400 font-medium text-lg">once-off</span>
+                                </div>
+                                <div class="mt-3 inline-block px-4 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                                    R0 Monthly Retainers
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="border-t border-slate-800 my-8"></div>
+
+                        <!-- Feature Checklist -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-10 text-slate-200 text-sm">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-xs"></i></div>
+                                <span>Custom Multi-Section Design (Home, Services, About, Contact)</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-xs"></i></div>
+                                <span>Secure Cloud Hosting Included</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-xs"></i></div>
+                                <span>Mobile, Tablet & Desktop Optimization</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-xs"></i></div>
+                                <span>WhatsApp Quick-Chat & Contact Form Integration</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-xs"></i></div>
+                                <span>Basic SEO Setup to Get Found on Google</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-xs"></i></div>
+                                <span>Ready in 3 to 5 Working Days</span>
+                            </div>
+                        </div>
+
+                        <div class="max-w-md mx-auto">
+                            <button onclick="router.navigate('home', 'contact')" class="w-full py-4 rounded-2xl font-bold text-white bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 shadow-xl shadow-indigo-600/30 transition transform hover:-translate-y-0.5 text-center block">
+                                Claim Your Website Now
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Templates Showcase Grid -->
+                <section id="templates" class="py-20 bg-slate-900/50 border-t border-slate-800/80">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                            <h2 class="text-3xl font-extrabold text-white tracking-tight">Interactive Template Showcase</h2>
+                            <p class="text-slate-400 text-sm">
+                                Click on any of our 6 professional design styles below to preview the fully functional layout built for your business.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <!-- Template 1 -->
+                            <div class="glass-panel rounded-2xl overflow-hidden group hover:border-indigo-500/50 transition duration-300 flex flex-col">
+                                <div class="bg-pink-500/10 p-6 border-b border-pink-500/20">
+                                    <span class="text-xs uppercase tracking-wider font-semibold text-pink-400">Soft Pastel Style</span>
+                                    <h3 class="text-xl font-bold text-white mt-1">1. Sher's Study Centre</h3>
+                                </div>
+                                <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                                    <p class="text-sm text-slate-300">
+                                        Designed for tutoring academies, schools, and children's education centers with welcoming pastel tones and booking forms.
+                                    </p>
+                                    <button onclick="router.navigate('template-study')" class="w-full py-3 rounded-xl bg-pink-600 hover:bg-pink-500 text-white font-semibold text-sm transition shadow-lg shadow-pink-600/20">
+                                        Preview Study Centre <i class="fa-solid fa-arrow-right ml-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Template 2 -->
+                            <div class="glass-panel rounded-2xl overflow-hidden group hover:border-indigo-500/50 transition duration-300 flex flex-col">
+                                <div class="bg-amber-500/10 p-6 border-b border-amber-500/20">
+                                    <span class="text-xs uppercase tracking-wider font-semibold text-amber-400">Harsh Industrial Style</span>
+                                    <h3 class="text-xl font-bold text-white mt-1">2. Legacy Contractor Services</h3>
+                                </div>
+                                <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                                    <p class="text-sm text-slate-300">
+                                        Rugged high-contrast design built for construction, plumbing, electrical, and heavy-duty trade contractors.
+                                    </p>
+                                    <button onclick="router.navigate('template-contractor')" class="w-full py-3 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-semibold text-sm transition shadow-lg shadow-amber-600/20">
+                                        Preview Contractor <i class="fa-solid fa-arrow-right ml-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Template 3 -->
+                            <div class="glass-panel rounded-2xl overflow-hidden group hover:border-indigo-500/50 transition duration-300 flex flex-col">
+                                <div class="bg-cyan-500/10 p-6 border-b border-cyan-500/20">
+                                    <span class="text-xs uppercase tracking-wider font-semibold text-cyan-400">Sleek Dark Mode Style</span>
+                                    <h3 class="text-xl font-bold text-white mt-1">3. Apex Tech Catalogue</h3>
+                                </div>
+                                <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                                    <p class="text-sm text-slate-300">
+                                        Futuristic high-tech gadget and product catalogue featuring interactive search filters and specs.
+                                    </p>
+                                    <button onclick="router.navigate('template-tech')" class="w-full py-3 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-sm transition shadow-lg shadow-cyan-600/20">
+                                        Preview Tech Catalogue <i class="fa-solid fa-arrow-right ml-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Template 4 -->
+                            <div class="glass-panel rounded-2xl overflow-hidden group hover:border-indigo-500/50 transition duration-300 flex flex-col">
+                                <div class="bg-purple-500/10 p-6 border-b border-purple-500/20">
+                                    <span class="text-xs uppercase tracking-wider font-semibold text-purple-400">Vibrant Creative Style</span>
+                                    <h3 class="text-xl font-bold text-white mt-1">4. Vibrant Creative Studio</h3>
+                                </div>
+                                <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                                    <p class="text-sm text-slate-300">
+                                        Bold gradients and dynamic layout featuring an interactive instant project quote calculator.
+                                    </p>
+                                    <button onclick="router.navigate('template-creative')" class="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-sm transition shadow-lg shadow-purple-600/20">
+                                        Preview Creative Studio <i class="fa-solid fa-arrow-right ml-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Template 5 -->
+                            <div class="glass-panel rounded-2xl overflow-hidden group hover:border-indigo-500/50 transition duration-300 flex flex-col">
+                                <div class="bg-emerald-500/10 p-6 border-b border-emerald-500/20">
+                                    <span class="text-xs uppercase tracking-wider font-semibold text-emerald-400">Clean Minimalist Style</span>
+                                    <h3 class="text-xl font-bold text-white mt-1">5. Aura Consulting</h3>
+                                </div>
+                                <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                                    <p class="text-sm text-slate-300">
+                                        Professional corporate layout with pristine typography and integrated appointment booking form.
+                                    </p>
+                                    <button onclick="router.navigate('template-consulting')" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm transition shadow-lg shadow-emerald-600/20">
+                                        Preview Consulting <i class="fa-solid fa-arrow-right ml-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Template 6 -->
+                            <div class="glass-panel rounded-2xl overflow-hidden group hover:border-indigo-500/50 transition duration-300 flex flex-col">
+                                <div class="bg-orange-500/10 p-6 border-b border-orange-500/20">
+                                    <span class="text-xs uppercase tracking-wider font-semibold text-orange-400">Warm Rustic Style</span>
+                                    <h3 class="text-xl font-bold text-white mt-1">6. The Daily Crust Café</h3>
+                                </div>
+                                <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                                    <p class="text-sm text-slate-300">
+                                        Cozy artisan bakery and café layout complete with menu items and interactive order basket.
+                                    </p>
+                                    <button onclick="router.navigate('template-cafe')" class="w-full py-3 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-semibold text-sm transition shadow-lg shadow-orange-600/20">
+                                        Preview Café & Bakery <i class="fa-solid fa-arrow-right ml-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contact" class="py-20 bg-slate-950 border-t border-slate-800/80">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                            
+                            <!-- Left Column: Info & Direct Links -->
+                            <div class="space-y-8">
+                                <div>
+                                    <span class="text-xs font-bold uppercase tracking-widest text-indigo-400 block mb-2">GET IN TOUCH</span>
+                                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">Ready to launch your website for R3,000?</h2>
+                                    <p class="text-slate-400 text-sm mt-4 leading-relaxed">
+                                        Fill out the quick form or message us directly on WhatsApp. We will discuss your project requirements and get your new website underway within 24 hours.
+                                    </p>
+                                </div>
+
+                                <div class="space-y-6">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl flex-shrink-0">
+                                            <i class="fa-brands fa-whatsapp"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-sm font-bold text-white">WhatsApp Direct</h4>
+                                            <a href="https://wa.me/27683901896?text=Hi%20S%20Tech,%20I'm%20interested%20in%20getting%20a%20website%20built!" target="_blank" class="text-xs text-emerald-400 hover:underline font-mono">068 390 1896 (Click to Chat)</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-4">
+                                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-xl flex-shrink-0">
+                                            <i class="fa-solid fa-envelope"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-sm font-bold text-white">Email Inquiry</h4>
+                                            <a href="mailto:shersstudycentre@gmail.com" class="text-xs text-indigo-400 hover:underline font-mono">shersstudycentre@gmail.com</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-4">
+                                        <div class="w-12 h-12 rounded-2xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 text-xl flex-shrink-0">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-sm font-bold text-white">Service Area</h4>
+                                            <p class="text-xs text-slate-400">South Africa (Nationwide Remote Service)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Column: Form Card -->
+                            <div class="glass-panel rounded-3xl p-8 sm:p-10 border border-slate-800 shadow-2xl">
+                                <h3 class="text-xl font-bold text-white mb-6">Send Us a Message</h3>
+                                <form onsubmit="handleWhatsAppSubmit(event)" class="space-y-5">
+                                    <div class="space-y-1.5">
+                                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300">Your Name</label>
+                                        <input type="text" id="client-name" required placeholder="John Smith" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-indigo-500 transition">
+                                    </div>
+                                    <div class="space-y-1.5">
+                                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300">Your WhatsApp / Phone Number</label>
+                                        <input type="text" id="client-phone" required placeholder="068 390 1896" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-indigo-500 transition">
+                                    </div>
+                                    <div class="space-y-1.5">
+                                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300">Business Name & Type</label>
+                                        <input type="text" id="client-business" required placeholder="e.g. My Business Name" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-indigo-500 transition">
+                                    </div>
+                                    <div class="space-y-1.5">
+                                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300">Tell us about your project</label>
+                                        <textarea id="client-details" rows="4" placeholder="What pages or features do you need?" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-indigo-500 transition"></textarea>
+                                    </div>
+                                    <button type="submit" class="w-full py-4 rounded-xl font-bold text-white bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 shadow-xl shadow-indigo-600/30 transition text-center block">
+                                        Submit Inquiry (R3,000 Package)
+                                    </button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
+
+        function renderTemplateStudy() {
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                <div class="bg-[#fbf9f5] text-slate-800 min-h-screen">
+                    <div class="bg-emerald-100 border-b border-emerald-200 py-3 px-4 text-center text-xs font-semibold text-emerald-900 flex justify-between items-center max-w-7xl mx-auto rounded-b-xl mb-4">
+                        <span><i class="fa-solid fa-arrow-left mr-2"></i> Previewing: Sher's Study Centre (Soft Pastel Template)</span>
+                        <button onclick="router.navigate('home')" class="bg-emerald-700 text-white px-4 py-1.5 rounded-lg shadow hover:bg-emerald-800 transition">Back to Agency</button>
+                    </div>
+                    <header class="max-w-7xl mx-auto px-4 py-16 text-center space-y-6">
+                        <span class="px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs uppercase tracking-wider">Empowering Young Minds</span>
+                        <h1 class="text-4xl sm:text-6xl font-serif font-bold text-emerald-950">Sher's Study Centre</h1>
+                        <p class="text-lg text-emerald-900/80 max-w-2xl mx-auto">
+                            Professional after-school tutoring, homework assistance, and developmental workshops in a warm, nurturing environment.
+                        </p>
+                        <div class="flex justify-center space-x-4 pt-4">
+                            <a href="#book" class="px-8 py-3.5 rounded-2xl bg-emerald-600 text-white font-bold shadow-lg shadow-emerald-600/30 hover:bg-emerald-700 transition">Book a Lesson</a>
+                        </div>
+                    </header>
+                    <section class="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 space-y-3">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-700 text-xl"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <h3 class="font-bold text-lg text-emerald-950">Expert Tutoring</h3>
+                            <p class="text-sm text-slate-600">Qualified educators specializing in mathematics, science, and literacy for grades R to 12.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 space-y-3">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-700 text-xl"><i class="fa-solid fa-book-open"></i></div>
+                            <h3 class="font-bold text-lg text-emerald-950">Homework Club</h3>
+                            <p class="text-sm text-slate-600">A quiet, structured environment where students complete assignments with daily guidance.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 space-y-3">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-700 text-xl"><i class="fa-solid fa-users"></i></div>
+                            <h3 class="font-bold text-lg text-emerald-950">Small Class Sizes</h3>
+                            <p class="text-sm text-slate-600">Ensuring personalized attention and tailored feedback for every single learner.</p>
+                        </div>
+                    </section>
+                    <section id="book" class="max-w-xl mx-auto px-4 py-16">
+                        <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-lg border border-emerald-100 space-y-6">
+                            <h2 class="text-2xl font-serif font-bold text-emerald-950 text-center">Enroll / Book a Session</h2>
+                            <form onsubmit="handleBookingSubmit(event)" class="space-y-4">
+                                <input type="text" required placeholder="Parent / Student Name" class="w-full bg-[#fbf9f5] border border-emerald-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-600">
+                                <input type="text" required placeholder="WhatsApp Number" class="w-full bg-[#fbf9f5] border border-emerald-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-600">
+                                <select class="w-full bg-[#fbf9f5] border border-emerald-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-600">
+                                    <option>Select Grade / Subject</option>
+                                    <option>Primary School Tutoring (Grades 1-7)</option>
+                                    <option>High School Mathematics (Grades 8-12)</option>
+                                    <option>Homework Club</option>
+                                </select>
+                                <button type="submit" class="w-full py-3.5 rounded-xl bg-emerald-600 text-white font-bold shadow-lg shadow-emerald-600/30 hover:bg-emerald-700 transition">Submit Booking Inquiry</button>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            `;
+        }
+
+        function renderTemplateContractor() {
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                <div class="bg-slate-950 text-slate-100 min-h-screen font-mono">
+                    <div class="bg-[#eab308] text-slate-950 py-3 px-4 text-center text-xs font-bold uppercase tracking-widest flex justify-between items-center max-w-7xl mx-auto rounded-b-xl mb-4">
+                        <span><i class="fa-solid fa-arrow-left mr-2"></i> Previewing: Legacy Contractor Services (Harsh Industrial)</span>
+                        <button onclick="router.navigate('home')" class="bg-slate-950 text-[#eab308] px-4 py-1.5 rounded-lg shadow hover:bg-slate-900 transition">Back to Agency</button>
+                    </div>
+                    <header class="max-w-7xl mx-auto px-4 py-20 border-b border-[#eab308]/30 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-6">
+                            <span class="px-3 py-1 bg-[#eab308]/20 border border-[#eab308] text-[#eab308] text-xs font-bold uppercase tracking-widest">Heavy Duty Trades</span>
+                            <h1 class="text-4xl sm:text-6xl font-black uppercase text-white tracking-tighter">Legacy Contractor <span class="text-[#eab308]">Services</span></h1>
+                            <p class="text-slate-400 text-sm">Industrial construction, structural plumbing, and high-voltage electrical installations. Built tough, delivered on schedule.</p>
+                            <a href="#quote" class="inline-block px-8 py-4 bg-[#eab308] text-slate-950 font-black uppercase text-sm tracking-wider hover:bg-yellow-400 transition">Request Site Inspection</a>
+                        </div>
+                        <div class="bg-slate-900 border-2 border-[#eab308] p-8 space-y-4">
+                            <div class="text-[#eab308] font-bold text-lg uppercase">Emergency Dispatch 24/7</div>
+                            <p class="text-xs text-slate-400">On-call certified technicians ready for immediate deployment across commercial and residential sites.</p>
+                            <div class="text-2xl font-bold text-white">0800-LEGACY-ZA</div>
+                        </div>
+                    </header>
+                    <section class="max-w-7xl mx-auto px-4 py-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-slate-900 border border-slate-800 p-8 space-y-4">
+                            <div class="text-[#eab308] text-3xl"><i class="fa-solid fa-hammer"></i></div>
+                            <h3 class="text-lg font-bold text-white uppercase">Structural Building</h3>
+                            <p class="text-xs text-slate-400">Foundation pouring, steel framing, and commercial warehouse construction.</p>
+                        </div>
+                        <div class="bg-slate-900 border border-slate-800 p-8 space-y-4">
+                            <div class="text-[#eab308] text-3xl"><i class="fa-solid fa-wrench"></i></div>
+                            <h3 class="text-lg font-bold text-white uppercase">Industrial Plumbing</h3>
+                            <p class="text-xs text-slate-400">High-pressure piping, commercial drainage, and certified valve maintenance.</p>
+                        </div>
+                        <div class="bg-slate-900 border border-slate-800 p-8 space-y-4">
+                            <div class="text-[#eab308] text-3xl"><i class="fa-solid fa-bolt"></i></div>
+                            <h3 class="text-lg font-bold text-white uppercase">Electrical Power</h3>
+                            <p class="text-xs text-slate-400">Three-phase sub-station wiring, generator installs, and compliance certificates.</p>
+                        </div>
+                    </section>
+                    <section id="quote" class="max-w-xl mx-auto px-4 py-16">
+                        <div class="bg-slate-900 border-2 border-[#eab308] p-8 space-y-6">
+                            <h2 class="text-xl font-black uppercase text-white tracking-wider text-center">Get a Contractor Estimate</h2>
+                            <form onsubmit="handleBookingSubmit(event)" class="space-y-4">
+                                <input type="text" required placeholder="Full Name / Company" class="w-full bg-slate-950 border border-slate-800 text-white px-4 py-3 text-xs uppercase focus:outline-none focus:border-[#eab308]">
+                                <input type="text" required placeholder="Phone Number" class="w-full bg-slate-950 border border-slate-800 text-white px-4 py-3 text-xs uppercase focus:outline-none focus:border-[#eab308]">
+                                <textarea rows="3" placeholder="Project specifications..." class="w-full bg-slate-950 border border-slate-800 text-white px-4 py-3 text-xs uppercase focus:outline-none focus:border-[#eab308]"></textarea>
+                                <button type="submit" class="w-full py-4 bg-[#eab308] text-slate-950 font-black uppercase text-sm tracking-wider hover:bg-yellow-400 transition">Submit Quote Request</button>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            `;
+        }
+
+        function renderTemplateTech() {
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                <div class="bg-[#0b0f19] text-slate-100 min-h-screen">
+                    <div class="bg-cyan-500/10 border-b border-cyan-500/20 py-3 px-4 text-center text-xs font-semibold text-cyan-400 flex justify-between items-center max-w-7xl mx-auto rounded-b-xl mb-4">
+                        <span><i class="fa-solid fa-arrow-left mr-2"></i> Previewing: Apex Tech Catalogue (Sleek Dark Mode)</span>
+                        <button onclick="router.navigate('home')" class="bg-cyan-600 text-white px-4 py-1.5 rounded-lg shadow hover:bg-cyan-500 transition">Back to Agency</button>
+                    </div>
+                    <header class="max-w-7xl mx-auto px-4 py-16 text-center space-y-6">
+                        <span class="px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono uppercase">Next-Gen Hardware</span>
+                        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white">Apex Tech Catalogue</h1>
+                        <p class="text-slate-400 max-w-2xl mx-auto text-sm">High-performance computing workstations, modular servers, and advanced developer gear.</p>
+                    </header>
+                    <section class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
+                            <div class="h-48 bg-[#0b0f19] rounded-xl flex items-center justify-center text-cyan-400 text-4xl font-mono"><i class="fa-solid fa-server"></i></div>
+                            <h3 class="font-bold text-white text-lg">Apex Station X1</h3>
+                            <p class="text-xs text-slate-400">Dual Xeon processors, 128GB ECC RAM, liquid cooling loop.</p>
+                            <div class="flex justify-between items-center pt-2">
+                                <span class="text-cyan-400 font-mono font-bold">R24,999</span>
+                                <button onclick="showNotification('Added Apex Station X1 to cart!')" class="px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold rounded-xl">Inquire</button>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
+                            <div class="h-48 bg-[#0b0f19] rounded-xl flex items-center justify-center text-cyan-400 text-4xl font-mono"><i class="fa-solid fa-microchip"></i></div>
+                            <h3 class="font-bold text-white text-lg">Quantum Core Z9</h3>
+                            <p class="text-xs text-slate-400">64-Core neural processing accelerator for deep learning.</p>
+                            <div class="flex justify-between items-center pt-2">
+                                <span class="text-cyan-400 font-mono font-bold">R18,500</span>
+                                <button onclick="showNotification('Added Quantum Core Z9 to cart!')" class="px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold rounded-xl">Inquire</button>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
+                            <div class="h-48 bg-[#0b0f19] rounded-xl flex items-center justify-center text-cyan-400 text-4xl font-mono"><i class="fa-solid fa-shield-cat"></i></div>
+                            <h3 class="font-bold text-white text-lg">CyberSec Node Pro</h3>
+                            <p class="text-xs text-slate-400">Hardware-encrypted firewall appliance with 10Gbps throughput.</p>
+                            <div class="flex justify-between items-center pt-2">
+                                <span class="text-cyan-400 font-mono font-bold">R9,200</span>
+                                <button onclick="showNotification('Added CyberSec Node Pro to cart!')" class="px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold rounded-xl">Inquire</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            `;
+        }
+
+        function renderTemplateCreative() {
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                <div class="bg-slate-950 text-slate-100 min-h-screen">
+                    <div class="bg-purple-500/10 border-b border-purple-500/20 py-3 px-4 text-center text-xs font-semibold text-purple-400 flex justify-between items-center max-w-7xl mx-auto rounded-b-xl mb-4">
+                        <span><i class="fa-solid fa-arrow-left mr-2"></i> Previewing: Vibrant Creative Studio (Interactive Quote Calculator)</span>
+                        <button onclick="router.navigate('home')" class="bg-purple-600 text-white px-4 py-1.5 rounded-lg shadow hover:bg-purple-500 transition">Back to Agency</button>
+                    </div>
+                    <header class="max-w-7xl mx-auto px-4 py-16 text-center space-y-6">
+                        <span class="px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs uppercase font-bold">Design & Branding</span>
+                        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">Vibrant Creative Studio</h1>
+                        <p class="text-slate-300 max-w-2xl mx-auto text-sm">We craft stunning visual identities, brand stories, and immersive digital experiences.</p>
+                    </header>
+                    <section class="max-w-3xl mx-auto px-4 py-12">
+                        <div class="bg-slate-900 border border-purple-500/30 rounded-3xl p-8 sm:p-10 space-y-8 shadow-2xl">
+                            <h2 class="text-2xl font-bold text-white text-center">Interactive Project Quote Calculator</h2>
+                            <div class="space-y-6">
+                                <div class="space-y-2">
+                                    <label class="block text-xs font-semibold text-purple-400 uppercase">Number of Pages: <span id="pages-val" class="text-white font-bold">5</span></label>
+                                    <input type="range" id="calc-pages" min="1" max="20" value="5" oninput="document.getElementById('pages-val').innerText = this.value; calculateCreativeQuote();" class="w-full accent-purple-500">
+                                </div>
+                                <div class="space-y-3">
+                                    <label class="flex items-center space-x-3 text-sm text-slate-300 cursor-pointer">
+                                        <input type="checkbox" id="calc-seo" onchange="calculateCreativeQuote()" class="w-4 h-4 rounded accent-purple-500">
+                                        <span>Advanced SEO Optimization (+R1,000)</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 text-sm text-slate-300 cursor-pointer">
+                                        <input type="checkbox" id="calc-logo" onchange="calculateCreativeQuote()" class="w-4 h-4 rounded accent-purple-500">
+                                        <span>Custom Logo & Brand Kit (+R800)</span>
+                                    </label>
+                                </div>
+                                <div class="p-6 bg-slate-950 rounded-2xl flex items-center justify-between border border-slate-800">
+                                    <span class="text-sm font-semibold text-slate-400">Estimated Total:</span>
+                                    <span id="calc-total" class="text-3xl font-extrabold text-purple-400 font-mono">R3,000</span>
+                                </div>
+                                <button onclick="showNotification('Quote submitted to Creative Studio!')" class="w-full py-4 rounded-xl font-bold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 transition">
+                                    Lock In This Estimate
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            `;
+        }
+
+        function renderTemplateConsulting() {
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                <div class="bg-white text-slate-900 min-h-screen">
+                    <div class="bg-slate-100 border-b border-slate-200 py-3 px-4 text-center text-xs font-semibold text-slate-700 flex justify-between items-center max-w-7xl mx-auto rounded-b-xl mb-4">
+                        <span><i class="fa-solid fa-arrow-left mr-2"></i> Previewing: Aura Consulting (Clean Minimalist)</span>
+                        <button onclick="router.navigate('home')" class="bg-slate-900 text-white px-4 py-1.5 rounded-lg shadow hover:bg-slate-800 transition">Back to Agency</button>
+                    </div>
+                    <header class="max-w-7xl mx-auto px-4 py-20 text-center space-y-6">
+                        <span class="text-xs uppercase tracking-widest text-emerald-600 font-bold">Strategic Business Advisory</span>
+                        <h1 class="text-4xl sm:text-6xl font-serif font-bold text-slate-900">Aura Consulting</h1>
+                        <p class="text-slate-600 max-w-xl mx-auto text-sm">Empowering enterprises with financial modeling, operational restructuring, and growth strategy.</p>
+                    </header>
+                    <section class="max-w-xl mx-auto px-4 py-12">
+                        <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 sm:p-10 space-y-6 shadow-sm">
+                            <h2 class="text-2xl font-serif font-bold text-slate-900 text-center">Schedule a Consultation</h2>
+                            <form onsubmit="handleBookingSubmit(event)" class="space-y-4">
+                                <input type="text" required placeholder="Full Name" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-600">
+                                <input type="email" required placeholder="Email Address" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-600">
+                                <input type="date" required class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-600">
+                                <button type="submit" class="w-full py-4 rounded-xl font-bold text-white bg-emerald-600 hover:bg-emerald-700 transition shadow-lg shadow-emerald-600/20">Confirm Appointment</button>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            `;
+        }
+
+        function renderTemplateCafe() {
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                <div class="bg-[#fdfbf7] text-slate-900 min-h-screen">
+                    <div class="bg-orange-100 border-b border-orange-200 py-3 px-4 text-center text-xs font-semibold text-orange-900 flex justify-between items-center max-w-7xl mx-auto rounded-b-xl mb-4">
+                        <span><i class="fa-solid fa-arrow-left mr-2"></i> Previewing: The Daily Crust Café (Warm Earthy Tones)</span>
+                        <button onclick="router.navigate('home')" class="bg-orange-800 text-white px-4 py-1.5 rounded-lg shadow hover:bg-orange-900 transition">Back to Agency</button>
+                    </div>
+                    <header class="max-w-7xl mx-auto px-4 py-16 text-center space-y-4">
+                        <span class="px-3.5 py-1.5 rounded-full bg-orange-100 text-orange-900 text-xs font-bold uppercase tracking-wider">Artisan Bakery & Coffee</span>
+                        <h1 class="text-4xl sm:text-6xl font-serif font-bold text-stone-900">The Daily Crust Café</h1>
+                        <p class="text-stone-700 text-sm max-w-xl mx-auto">Freshly baked sourdough, organic coffee, and wholesome pastries made daily with love.</p>
+                    </header>
+                    <section class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white p-6 rounded-3xl border border-stone-200 shadow-sm space-y-4">
+                            <div class="h-40 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-800 text-3xl"><i class="fa-solid fa-bread-slice"></i></div>
+                            <h3 class="font-serif font-bold text-xl text-stone-900">Artisan Sourdough</h3>
+                            <p class="text-xs text-stone-600">Fermented for 48 hours with our signature heritage starter.</p>
+                            <div class="flex justify-between items-center pt-2">
+                                <span class="font-bold text-stone-900">R65</span>
+                                <button onclick="handleCafeOrder('Artisan Sourdough', 65)" class="px-4 py-2 bg-orange-800 hover:bg-orange-900 text-white text-xs font-bold rounded-xl">Add to Basket</button>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-3xl border border-stone-200 shadow-sm space-y-4">
+                            <div class="h-40 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-800 text-3xl"><i class="fa-solid fa-mug-hot"></i></div>
+                            <h3 class="font-serif font-bold text-xl text-stone-900">Double Shot Cappuccino</h3>
+                            <p class="text-xs text-stone-600">Rich espresso with silky microfoam and oat milk option.</p>
+                            <div class="flex justify-between items-center pt-2">
+                                <span class="font-bold text-stone-900">R38</span>
+                                <button onclick="handleCafeOrder('Double Shot Cappuccino', 38)" class="px-4 py-2 bg-orange-800 hover:bg-orange-900 text-white text-xs font-bold rounded-xl">Add to Basket</button>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-3xl border border-stone-200 shadow-sm space-y-4">
+                            <div class="h-40 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-800 text-3xl"><i class="fa-solid fa-cookie-bite"></i></div>
+                            <h3 class="font-serif font-bold text-xl text-stone-900">Chocolate Croissant</h3>
+                            <p class="text-xs text-stone-600">Flaky, buttery pastry filled with Belgian dark chocolate.</p>
+                            <div class="flex justify-between items-center pt-2">
+                                <span class="font-bold text-stone-900">R45</span>
+                                <button onclick="handleCafeOrder('Chocolate Croissant', 45)" class="px-4 py-2 bg-orange-800 hover:bg-orange-900 text-white text-xs font-bold rounded-xl">Add to Basket</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            `;
+        }
+
+        window.onload = function() {
+            router.navigate('home');
+        };
+    </script>
+</body>
+</html>
